@@ -57,6 +57,43 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (FlockAgent agent in agents)
+        {
+            List<Transform> context = GetNearbyObjects(agent);
+
+            // Debug - Check Sprite change color when its close to neighbors
+            agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red,
+                context.Count / 6f);
+
+            //// cal agent and near by objects
+            //Vector2 move = behavior.CalculateMove(agent, context, this);
+            //move *= driveFactor;
+
+            ////check maxspeed
+            //if (move.sqrMagnitude > sqaureMaxSpeed)
+            //{
+            //    move = move.normalized * MaxSpeed;
+            //}
+            //agent.Move(move);
+
+        }
+    }
+
+    List<Transform> GetNearbyObjects(FlockAgent agent)
+    {
+        List<Transform> context = new List<Transform>();
+        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position,
+            neighborRadius);
+
+        // Check For each colllider not ourself
+        foreach (Collider2D c in contextColliders)
+        {
+            if (c != agent.AgentCollider)
+            {
+                context.Add(c.transform);
+            }
+        }
+        return context;
+
     }
 }
