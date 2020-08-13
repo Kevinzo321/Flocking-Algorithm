@@ -62,19 +62,19 @@ public class Flock : MonoBehaviour
             List<Transform> context = GetNearbyObjects(agent);
 
             // Debug - Check Sprite change color when its close to neighbors
-            agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red,
-                context.Count / 6f);
+            //agent.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
 
-            //// cal agent and near by objects
-            //Vector2 move = behavior.CalculateMove(agent, context, this);
-            //move *= driveFactor;
+            // cal agent and near by objects
 
-            ////check maxspeed
-            //if (move.sqrMagnitude > sqaureMaxSpeed)
-            //{
-            //    move = move.normalized * MaxSpeed;
-            //}
-            //agent.Move(move);
+            Vector2 move = behavior.CalculateMove(agent, context, this);
+            move *= driveFactor;
+
+            //check maxspeed
+            if (move.sqrMagnitude > sqaureMaxSpeed)
+            {
+                move = move.normalized * MaxSpeed;
+            }
+            agent.Move(move);
 
         }
     }
