@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82c98cd1a3aa748468b6812dbfd81781, type: 3}
-  m_Name: D Flock Beh
+  m_Name: Default Flock Behavior
   m_EditorClassIdentifier: 
   behaviors: []
   weights: []
