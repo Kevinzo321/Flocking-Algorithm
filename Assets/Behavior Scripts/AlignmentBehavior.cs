@@ -14,7 +14,8 @@ public class AlignmentBehavior : FilteredFlockBah
 
         // add all together and avg
         Vector2 alignmentMove = Vector2.zero;
-        foreach (Transform item in context)
+        List<Transform> filteredContext = (filter == null) ? context : filter.Filter(agent, context);
+        foreach (Transform item in filteredContext)
         { 
             alignmentMove += (Vector2)item.transform.up;
         }

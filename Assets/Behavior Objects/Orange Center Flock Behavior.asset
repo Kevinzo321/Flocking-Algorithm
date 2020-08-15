@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82c98cd1a3aa748468b6812dbfd81781, type: 3}
-  m_Name: Center Flock Behavior
+  m_Name: Orange Center Flock Behavior
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 11400000, guid: 88add8b81e5b34bc6acc222f4eba2343, type: 2}
   - {fileID: 11400000, guid: 1dbe3080d87d54bd5ab6849ad58e0f3d, type: 2}
   - {fileID: 11400000, guid: ce98c2290549f42e99888d9af557d540, type: 2}
   - {fileID: 11400000, guid: decf109dc23fa4838976c2733454d22c, type: 2}
+  - {fileID: 11400000, guid: 585811258f94248b4b32f984c60d489d, type: 2}
   weights:
-  - 1
+  - 4
   - 2
   - 4
   - 0.1
+  - 5
