@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd019834a913840f9a4a40a3774da3c0, type: 3}
   m_Name: Cohension
   m_EditorClassIdentifier: 
+  filter: {fileID: 11400000, guid: 6ca24a1d4130e45c38d21b60ec77cc90, type: 2}
