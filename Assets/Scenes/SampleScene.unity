@@ -174,7 +174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 18
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -214,6 +214,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1489325273}
   - component: {fileID: 1489325272}
+  - component: {fileID: 1489325274}
+  - component: {fileID: 1489325275}
   m_Layer: 0
   m_Name: Flock
   m_TagString: Untagged
@@ -241,6 +243,8 @@ MonoBehaviour:
   MaxSpeed: 5
   neighborRadius: 1.5
   avoidRadiusMultiplier: 0.5
+  distance: 1
+  useInitalCameraDistance: 1
 --- !u!4 &1489325273
 Transform:
   m_ObjectHideFlags: 0
@@ -255,3 +259,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489325274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489325271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7131ddb114cd147888d2a9b775ee1a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1489325275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489325271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691db67776df41cca5c80f89a53e4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

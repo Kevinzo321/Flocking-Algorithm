@@ -30,6 +30,10 @@ public class Flock : MonoBehaviour
     float sqaureAvoidanceRadius;
     public float SqaureAvoidRadius {get {return sqaureAvoidanceRadius; }}
 
+    public float distance = 1.0f; //
+    public bool useInitalCameraDistance = false;//
+
+    private float actualDistance;//
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,17 @@ public class Flock : MonoBehaviour
             newAgent.name = "Agent" + i;
             agents.Add(newAgent);
 
+        }
+
+        if (useInitalCameraDistance) //
+        {
+            Vector3 toObjectVector = transform.position - Camera.main.transform.position;
+            Vector3 linearDistanceVector = Vector3.Project(toObjectVector, Camera.main.transform.forward);
+            actualDistance = linearDistanceVector.magnitude;
+        }
+        else
+        {
+            actualDistance = distance;
         }
 
     }
@@ -77,6 +92,11 @@ public class Flock : MonoBehaviour
             agent.Move(move);
 
         }
+
+        Vector3 mousePosition = Input.mousePosition;//
+        mousePosition.z = actualDistance;
+        transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+
     }
 
     List<Transform> GetNearbyObjects(FlockAgent agent)
@@ -96,4 +116,7 @@ public class Flock : MonoBehaviour
         return context;
 
     }
+
+
+
 }
